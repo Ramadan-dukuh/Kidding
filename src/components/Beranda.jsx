@@ -73,7 +73,7 @@ function Beranda() {
                                 <div className="relative bg-white rounded-3xl shadow-2xl p-8 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
                                     <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center">
                                         <img
-                                            src="/src/assets/lookback.jpeg"
+                                            src="/lookback.jpeg"
                                             alt="Portfolio Website"
                                             className="w-full h-full object-contain-coverrounded-2xl"
                                         />
