@@ -17,12 +17,9 @@ function Header() {
                 <div className="flex items-center justify-between h-16 lg:h-20">
                     {/* Logo Section */}
                     <div className="flex items-center gap-3 flex-shrink-0">
-                        <div className="w-10 h-10 lg:w-12 lg:h-12  flex items-center justify-center ">
-                            <img src="/Logo Kidding.png" alt="" />
-                        </div>
-                        <h1 className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-                            Kidding
-                        </h1>
+                        <div className="w-10 h-10 lg:w-50 lg:h-50  flex items-center justify-center ">
+                            <img src="/Logo_Submark White.png" alt="" />
+                        </div>                        
                     </div>
 
                     {/* Desktop Navigation */}
@@ -31,7 +28,7 @@ function Header() {
                             {[
                                 { href: "#home", text: "Beranda" },
                                 { href: "#template", text: "Template" },
-                                { href: "#harga", text: "Harga" },
+                                // { href: "#harga", text: "Harga" },
                                 { href: "#faq", text: "FAQ" },
                                 { href: "#kontak", text: "Kontak" }
                             ].map((item, index) => (

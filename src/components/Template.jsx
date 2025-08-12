@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 function Template() {
+  const [previewTemplate, setPreviewTemplate] = useState(null);
   const templates = [
     {
       id: 1,
@@ -74,11 +75,12 @@ function Template() {
         "Music Player",
       ],
       price: "Rp 450.000",
-      image: "/template4.jpg",
+      image: "/image2.png",
       popular: false,
       recommended: false,
       icon: "heart",
       rating: 5,
+      demoUrl: "https://sabtukalogaujan.vercel.app",
     },
     {
       id: 5,
@@ -93,11 +95,12 @@ function Template() {
         "Countdown Timer",
       ],
       price: "Rp 350.000",
-      image: "/template5.jpg",
+      image: "/image3.png",
       popular: false,
       recommended: false,
       icon: "calendar",
       rating: 4,
+      demoUrl: "https://ramadan-dukuh.github.io/UndanganDigital/",
     },
     {
       id: 6,
@@ -112,31 +115,21 @@ function Template() {
         "Music Background",
       ],
       price: "Rp 550.000",
-      image: "/template6.jpg",
+      image: "/image1.png",
       popular: false,
       recommended: false,
       icon: "gift",
       rating: 5,
+      demoUrl: "https://ramadan-dukuh.github.io/HBDAndini/",
     },
   ];
 
-  // Hanya kategori yang diinginkan
   const categories = ["Portfolio", "Undangan", "Web Kado"];
   const [activeCategory, setActiveCategory] = useState("Portfolio");
 
   const filteredTemplates = templates.filter(
-    (template) =>
-      (activeCategory === "Portfolio" && template.category === "Portfolio") ||
-      (activeCategory === "Undangan" && template.category === "Undangan") ||
-      (activeCategory === "Web Kado" && template.category === "Web Kado")
+    (template) => template.category === activeCategory
   );
-
-  // Urutkan agar Portfolio selalu di depan
-  const sortedTemplates = [
-    ...templates.filter((t) => t.category === "Portfolio"),
-    ...templates.filter((t) => t.category === "Undangan"),
-    ...templates.filter((t) => t.category === "Web Kado"),
-  ].filter((t) => t.category === activeCategory);
 
   return (
     <section
@@ -246,7 +239,7 @@ function Template() {
 
         {/* Templates Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {sortedTemplates.map((template) => (
+          {filteredTemplates.map((template) => (
             <div
               key={template.id}
               className={`group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative ${
@@ -313,117 +306,209 @@ function Template() {
                       : "bg-gradient-to-br from-purple-100 to-violet-200"
                   }`}
                 >
-                  {/* Template Icon */}
-                  <div className="text-center space-y-2">
-                    <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto">
-                      {template.icon === "code" && (
-                        <svg
-                          className="w-8 h-8 text-blue-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                          />
-                        </svg>
-                      )}
-                      {template.icon === "palette" && (
-                        <svg
-                          className="w-8 h-8 text-blue-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 3H5a2 2 0 00-2 2v12a4 4 0 004 4h2M9 3h10a2 2 0 012 2v12a4 4 0 01-4 4H9"
-                          />
-                        </svg>
-                      )}
-                      {template.icon === "user" && (
-                        <svg
-                          className="w-8 h-8 text-blue-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                          />
-                        </svg>
-                      )}
-                      {template.icon === "heart" && (
-                        <svg
-                          className="w-8 h-8 text-pink-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                          />
-                        </svg>
-                      )}
-                      {template.icon === "calendar" && (
-                        <svg
-                          className="w-8 h-8 text-pink-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                          />
-                        </svg>
-                      )}
-                      {template.icon === "gift" && (
-                        <svg
-                          className="w-8 h-8 text-purple-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"
-                          />
-                        </svg>
-                      )}
+                  {template.image ? (
+                    <img
+                      src={template.image}
+                      alt={template.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="text-center space-y-2">
+                      <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto">
+                        {template.icon === "code" && (
+                          <svg
+                            className="w-8 h-8 text-blue-600"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                            />
+                          </svg>
+                        )}
+                        {template.icon === "palette" && (
+                          <svg
+                            className="w-8 h-8 text-blue-600"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 3H5a2 2 0 00-2 2v12a4 4 0 004 4h2M9 3h10a2 2 0 012 2v12a4 4 0 01-4 4H9"
+                            />
+                          </svg>
+                        )}
+                        {template.icon === "user" && (
+                          <svg
+                            className="w-8 h-8 text-blue-600"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                            />
+                          </svg>
+                        )}
+                        {template.icon === "heart" && (
+                          <svg
+                            className="w-8 h-8 text-pink-600"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                            />
+                          </svg>
+                        )}
+                        {template.icon === "calendar" && (
+                          <svg
+                            className="w-8 h-8 text-pink-600"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                            />
+                          </svg>
+                        )}
+                        {template.icon === "gift" && (
+                          <svg
+                            className="w-8 h-8 text-purple-600"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"
+                            />
+                          </svg>
+                        )}
+                      </div>
+                      <div
+                        className={`text-xs font-medium ${
+                          template.category === "Portfolio"
+                            ? "text-blue-700"
+                            : template.category === "Undangan"
+                            ? "text-pink-700"
+                            : "text-purple-700"
+                        }`}
+                      >
+                        {template.category} Template
+                      </div>
                     </div>
-                    <div
-                      className={`text-xs font-medium ${
-                        template.category === "Portfolio"
-                          ? "text-blue-700"
-                          : template.category === "Undangan"
-                          ? "text-pink-700"
-                          : "text-purple-700"
-                      }`}
-                    >
-                      {template.category} Template
-                    </div>
-                  </div>
+                  )}
                 </div>
                 {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                  <div className="space-y-3 text-center">
-                    <button className="bg-white text-gray-900 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105 flex items-center">
+                {template.demoUrl && (
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                    <div className="space-y-3 text-center">
+                      <button
+                        onClick={() => setPreviewTemplate(template)}
+                        className="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors transform hover:scale-105"
+                      >
+                        <svg
+                          className="w-4 h-4 inline mr-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                          />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                          />
+                        </svg>
+                        Lihat Demo
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {template.title}
+                  </h3>
+                  <div className="flex items-center">
+                    {[...Array(5)].map((_, i) => (
+                      <svg
+                        key={i}
+                        className={`w-4 h-4 ${
+                          i < template.rating
+                            ? "text-yellow-400"
+                            : "text-gray-300"
+                        }`}
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-600 mb-4">{template.description}</p>
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-gray-700 mb-2">
+                    Fitur:
+                  </h4>
+                  <ul className="grid grid-cols-2 gap-2">
+                    {template.features.map((feature, i) => (
+                      <li key={i} className="flex items-center">
+                        <svg
+                          className="w-4 h-4 text-green-500 mr-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        <span className="text-sm text-gray-600">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="flex gap-3">
+                  {template.demoUrl && (
+                    <button
+                      onClick={() => setPreviewTemplate(template)}
+                      className="flex-1 bg-white border border-gray-300 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center"
+                    >
                       <svg
                         className="w-4 h-4 mr-2"
                         fill="none"
@@ -445,40 +530,42 @@ function Template() {
                       </svg>
                       Preview
                     </button>
-                    <a
-                      href={template.demoUrl || "#"}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors transform hover:scale-105"
-                    >
-                      <svg
-                        className="w-4 h-4 inline mr-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                        />
-                      </svg>
-                      Lihat Demo
-                    </a>
-                  </div>
+                  )}
+                  <button className="flex-1 bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-4 py-2 rounded-lg font-semibold hover:opacity-90 transition-colors flex items-center justify-center">
+                    🛒 Beli
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Preview Modal */}
+      {previewTemplate && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
+          <div className="bg-white w-full max-w-6xl rounded-xl shadow-lg overflow-hidden relative max-h-[90vh] flex flex-col">
+            <button
+              onClick={() => setPreviewTemplate(null)}
+              className="absolute top-4 right-4 bg-gray-200 hover:bg-gray-300 p-2 rounded-full z-10"
+            >
+              ✕
+            </button>
+            <div className="p-4 border-b">
+              <h3 className="text-xl font-bold">{previewTemplate.title}</h3>
+            </div>
+            <div className="flex-1 overflow-hidden">
+              <iframe
+                src={previewTemplate.demoUrl}
+                title={`Preview ${previewTemplate.title}`}
+                className="w-full h-full"
+                frameBorder="0"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

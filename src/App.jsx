@@ -13,7 +13,7 @@ function App() {
     <Header />
     <Beranda />
     <Template />
-    <Harga />
+    {/* <Harga /> */}
     <FAQ />
     <Footer />
     </div>

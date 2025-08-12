@@ -40,14 +40,14 @@ function Footer() {
     {
       icon: "📱",
       title: "WhatsApp",
-      value: "+62 812-3456-7890",
-      link: "https://wa.me/6281234567890",
+      value: "+62 895-3584-82091",
+      link: "https://wa.me/62895359482091",
     },
     {
       icon: "📧",
       title: "Email",
-      value: "info@webportfolio.id",
-      link: "mailto:info@webportfolio.id",
+      value: "kidding.web@gmail.com",
+      link: "mailto:kidding.web@gmail.com",
     },
     {
       icon: "📍",
@@ -94,43 +94,43 @@ function Footer() {
           <circle cx="17" cy="7" r="1.5" fill="currentColor" stroke="none" />
         </svg>
       ),
-      href: "https://instagram.com/webportfolio.id",
+      href: "https://instagram.com/kidding.web",
       color: "hover:text-pink-500",
     },
-    {
-      name: "Facebook",
-      icon: (
-        <svg
-          className="w-5 h-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <rect width="20" height="20" x="2" y="2" rx="5" strokeWidth={2} />
-          <path strokeWidth={2} d="M16 8h-2a2 2 0 00-2 2v2h4l-.5 3H12v7" />
-        </svg>
-      ),
-      href: "https://facebook.com/webportfolio.id",
-      color: "hover:text-blue-600",
-    },
-    {
-      name: "Twitter",
-      icon: (
-        <svg
-          className="w-5 h-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeWidth={2}
-            d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0022.4 1.64a9.09 9.09 0 01-2.88 1.1A4.48 4.48 0 0012 7.48v1A12.94 12.94 0 013 4.11s-4 9 5 13a13.07 13.07 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
-          />
-        </svg>
-      ),
-      href: "https://twitter.com/webportfolio_id",
-      color: "hover:text-blue-400",
-    },
+    // {
+    //   name: "Facebook",
+    //   icon: (
+    //     <svg
+    //       className="w-5 h-5"
+    //       fill="none"
+    //       stroke="currentColor"
+    //       viewBox="0 0 24 24"
+    //     >
+    //       <rect width="20" height="20" x="2" y="2" rx="5" strokeWidth={2} />
+    //       <path strokeWidth={2} d="M16 8h-2a2 2 0 00-2 2v2h4l-.5 3H12v7" />
+    //     </svg>
+    //   ),
+    //   href: "https://facebook.com/webportfolio.id",
+    //   color: "hover:text-blue-600",
+    // },
+    // {
+    //   name: "Twitter",
+    //   icon: (
+    //     <svg
+    //       className="w-5 h-5"
+    //       fill="none"
+    //       stroke="currentColor"
+    //       viewBox="0 0 24 24"
+    //     >
+    //       <path
+    //         strokeWidth={2}
+    //         d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0022.4 1.64a9.09 9.09 0 01-2.88 1.1A4.48 4.48 0 0012 7.48v1A12.94 12.94 0 013 4.11s-4 9 5 13a13.07 13.07 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+    //       />
+    //     </svg>
+    //   ),
+    //   href: "https://twitter.com/webportfolio_id",
+    //   color: "hover:text-blue-400",
+    // },
     {
       name: "LinkedIn",
       icon: (
@@ -148,7 +148,7 @@ function Footer() {
           <circle cx="8" cy="8" r="2" strokeWidth={2} />
         </svg>
       ),
-      href: "https://linkedin.com/company/webportfolio-id",
+      href: "https://www.linkedin.com/in/muhamad-rizki-ramadan-a83117289/",
       color: "hover:text-blue-700",
     },
     {
@@ -164,7 +164,7 @@ function Footer() {
           <path strokeWidth={2} d="M22 6l-10 7L2 6" />
         </svg>
       ),
-      href: "mailto:info@webportfolio.id",
+      href: "mailto:kidding.web@gmail.com",
       color: "hover:text-yellow-400",
     },
   ];
@@ -182,7 +182,7 @@ function Footer() {
             <div className="lg:col-span-2">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12  rounded-xl flex items-center justify-center mr-3 ">
-                  <img src="/Logo Kidding.png" alt="Kidding Logo" />
+                  <img src="/Logo_Submark 1.png" alt="Kidding Logo" />
                 </div>
                 <h3 className="text-2xl font-bold text-white">Kidding</h3>
               </div>
