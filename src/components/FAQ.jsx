@@ -254,7 +254,7 @@ function FAQ() {
               Hubungi Kami
             </a>
             <a
-              href="https://wa.me/your-number"
+              href="https://wa.me/+62895359482091"
               className="inline-flex items-center justify-center border-2 border-green-500 text-green-600 py-3 px-8 rounded-xl hover:bg-green-500 hover:text-white transition-all duration-300 font-semibold"
             >
               <svg
