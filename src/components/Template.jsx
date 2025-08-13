@@ -10,19 +10,18 @@ function Template() {
         "Template portfolio modern untuk developer dan programmer dengan showcase project terbaik.",
       category: "Portfolio",
       features: [
-        "Responsive Design",
-        "Dark/Light Mode",
+        "Responsive Design",        
         "Project Showcase",
         "Contact Form",
         "Skills Section",
       ],
-      price: "Rp 299.000",
-      image: "/template1.jpg",
+      price: "Rp 20.000",
+      image: "/image4.png",
       popular: true,
       recommended: false,
       icon: "code",
       rating: 5,
-      demoUrl: "https://demo-portfolio.vercel.app",
+      demoUrl: "https://template-porto.vercel.app/",
     },
     {
       id: 2,
@@ -30,18 +29,20 @@ function Template() {
       description:
         "Tampilkan karya desain Anda dengan layout yang menarik dan interaktif.",
       category: "Portfolio",
-      features: [
-        "Gallery Layout",
+      features: [        
         "Animation Effects",
         "Typography Focus",
         "Mobile Optimized",
+        "Portfolio Showcase",
+        "Contact Form",
       ],
-      price: "Rp 299.000",
-      image: "/template2.jpg",
+      price: "Rp 30.000",
+      image: "/image5.png",
       popular: true,
       recommended: false,
       icon: "palette",
       rating: 5,
+      demoUrl: "https://ramadan-dev.vercel.app/",
     },
     {
       id: 3,
@@ -74,7 +75,7 @@ function Template() {
         "Love Story Timeline",
         "Music Player",
       ],
-      price: "Rp 450.000",
+      price: "Rp 30.000",
       image: "/image2.png",
       popular: false,
       recommended: false,
@@ -94,7 +95,7 @@ function Template() {
         "Guest List",
         "Countdown Timer",
       ],
-      price: "Rp 350.000",
+      price: "Rp 30.000",
       image: "/image3.png",
       popular: false,
       recommended: false,
@@ -104,9 +105,9 @@ function Template() {
     },
     {
       id: 6,
-      title: "Web Kado Surprise Romance",
+      title: "Web Kado Surprise",
       description:
-        "Buat kejutan spesial untuk orang tersayang dengan website kado yang romantis.",
+        "Buat kejutan spesial untuk orang tersayang dengan website kado yang terbaik.",
       category: "Web Kado",
       features: [
         "Surprise Animation",
@@ -114,7 +115,7 @@ function Template() {
         "Love Messages",
         "Music Background",
       ],
-      price: "Rp 550.000",
+      price: "Rp 30.000",
       image: "/image1.png",
       popular: false,
       recommended: false,
@@ -541,31 +542,31 @@ function Template() {
         </div>
       </div>
 
-      {/* Preview Modal */}
-      {previewTemplate && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
-          <div className="bg-white w-full max-w-6xl rounded-xl shadow-lg overflow-hidden relative max-h-[90vh] flex flex-col">
-            <button
-              onClick={() => setPreviewTemplate(null)}
-              className="absolute top-4 right-4 bg-gray-200 hover:bg-gray-300 p-2 rounded-full z-10"
-            >
-              ✕
-            </button>
-            <div className="p-4 border-b">
-              <h3 className="text-xl font-bold">{previewTemplate.title}</h3>
-            </div>
-            <div className="flex-1 overflow-hidden">
-              <iframe
-                src={previewTemplate.demoUrl}
-                title={`Preview ${previewTemplate.title}`}
-                className="w-full h-full"
-                frameBorder="0"
-                allowFullScreen
-              />
-            </div>
-          </div>
-        </div>
-      )}
+ {previewTemplate && (
+  <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4 overflow-y-auto">
+    <div className="bg-white w-full max-w-6xl rounded-xl shadow-lg overflow-hidden relative h-[90vh] flex flex-col mx-auto">
+      <button
+        onClick={() => setPreviewTemplate(null)}
+        className="absolute top-4 right-4 bg-gray-200 hover:bg-gray-300 p-2 rounded-full z-10"
+      >
+        ✕
+      </button>
+      <div className="p-4 border-b flex-shrink-0">
+        <h3 className="text-xl font-bold">{previewTemplate.title}</h3>
+      </div>
+      <div className="flex-1 min-h-0 overflow-auto"> {/* Tambahkan overflow-auto di sini */}
+        <iframe
+          src={previewTemplate.demoUrl}
+          title={`Preview ${previewTemplate.title}`}
+          className="w-full h-full min-h-[50vh]"
+          frameBorder="0"
+          allowFullScreen
+          style={{ height: '100%' }}
+        />
+      </div>
+    </div>
+  </div>
+)}
     </section>
   );
 }

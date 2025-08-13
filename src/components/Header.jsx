@@ -17,7 +17,7 @@ function Header() {
                 <div className="flex items-center justify-between h-16 lg:h-20">
                     {/* Logo Section */}
                     <div className="flex items-center gap-3 flex-shrink-0">
-                        <div className="w-10 h-10 lg:w-50 lg:h-50  flex items-center justify-center ">
+                        <div className="w-40 h-40 lg:w-50 lg:h-50  flex items-center justify-center ">
                             <img src="/Logo_Submark White.png" alt="" />
                         </div>                        
                     </div>
