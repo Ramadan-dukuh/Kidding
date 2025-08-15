@@ -124,6 +124,44 @@ function Template() {
       rating: 5,
       demoUrl: "https://ramadan-dukuh.github.io/HBDAndini/",
     },
+    {
+      id: 7,
+      title: "Web Ucapan Ulang Tahun",
+      description:
+        "Rayakan momen spesial dengan ucapan selamat ulang tahun yang unik.",
+      category: "Web Kado",
+      features: [        
+        "Photo Memories",
+        "Love Messages",
+        "Music Background",
+      ],
+      price: "Rp 30.000",
+      image: "/image7.png",
+      popular: false,
+      recommended: false,
+      icon: "gift",
+      rating: 5,
+      demoUrl: "https://ramadan-dukuh.github.io/HBDKES/",
+    },
+    {
+      id: 8,
+      title: "Web Kenangan",
+      description:
+        "Buat kenangan indah bersama orang tersayang dengan website kenangan yang personal.",
+      category: "Web Kado",
+      features: [        
+        "Photo Memories",
+        "Love Messages",
+        "Music Background",
+      ],
+      price: "Rp 30.000",
+      image: "/image8.png",
+      popular: false,
+      recommended: false,
+      icon: "gift",
+      rating: 5,
+      demoUrl: "https://ramadan-dukuh.github.io/HBDMIN/",
+    },
   ];
 
   const categories = ["Portfolio", "Undangan", "Web Kado"];
