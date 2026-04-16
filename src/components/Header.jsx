@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,20 +18,20 @@ function Header() {
                 <div className="flex items-center justify-between h-16 lg:h-20">
                     {/* Logo Section */}
                     <div className="flex items-center gap-3 flex-shrink-0">
-                        <div className="w-40 h-40 lg:w-50 lg:h-50  flex items-center justify-center ">
-                            <img src="/Logo_Submark White.png" alt="" />
-                        </div>                        
+                        <Link to="/" className="w-40 h-40 lg:w-50 lg:h-50  flex items-center justify-center ">
+                            <img src="/Logo_Submark White.png" alt="Kidding Logo" />
+                        </Link>                        
                     </div>
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:block">
                         <ul className="flex items-center gap-1 lg:gap-2">
                             {[
-                                { href: "#home", text: "Beranda" },
-                                { href: "#template", text: "Template" },
-                                // { href: "#harga", text: "Harga" },
-                                { href: "#faq", text: "FAQ" },
-                                { href: "#kontak", text: "Kontak" }
+                                { href: "/#home", text: "Beranda" },
+                                { href: "/#template", text: "Template" },
+                                // { href: "/#harga", text: "Harga" },
+                                { href: "/#faq", text: "FAQ" },
+                                { href: "/#kontak", text: "Kontak" }
                             ].map((item, index) => (
                                 <li key={index}>
                                     <a 
@@ -72,11 +73,11 @@ function Header() {
                     <nav className="pt-4 border-t border-gray-100">
                         <ul className="space-y-2">
                             {[
-                                { href: "#home", text: "Beranda" },
-                                { href: "#template", text: "Template" },
-                                { href: "#harga", text: "Harga" },
-                                { href: "#faq", text: "FAQ" },
-                                { href: "#kontak", text: "Kontak" }
+                                { href: "/#home", text: "Beranda" },
+                                { href: "/#template", text: "Template" },
+                                { href: "/#harga", text: "Harga" },
+                                { href: "/#faq", text: "FAQ" },
+                                { href: "/#kontak", text: "Kontak" }
                             ].map((item, index) => (
                                 <li key={index}>
                                     <a 

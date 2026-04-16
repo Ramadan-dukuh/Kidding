@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const [formData, setFormData] = useState({
@@ -253,12 +254,12 @@ function Footer() {
                 © 2025 Kidding. All rights reserved.
               </p>
               <div className="flex space-x-6 text-sm">
-                <a
-                  href="#"
+                <Link
+                  to="/privacy-policy"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Privacy Policy
-                </a>
+                </Link>
                 <a
                   href="#"
                   className="text-gray-400 hover:text-white transition-colors"
