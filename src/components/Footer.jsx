@@ -260,12 +260,12 @@ function Footer() {
                 >
                   Privacy Policy
                 </Link>
-                <a
-                  href="#"
+                <Link
+                  to="/terms-of-service"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Terms of Service
-                </a>
+                </Link>
                 <a
                   href="#"
                   className="text-gray-400 hover:text-white transition-colors"

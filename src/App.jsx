@@ -7,6 +7,7 @@ import Harga from './components/Harga'
 import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import PrivacyPolicy from './components/PrivacyPolicy'
+import TermsOfService from './components/TermsOfService'
 import ScrollToTop from './components/ScrollToTop'
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             </>
           } />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
         </Routes>
         <Footer />
       </div>
